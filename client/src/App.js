@@ -12,7 +12,7 @@ function App() {
         <div className="navbar">
           <Link to="/">Home Page</Link>
           <Link to="/login"> Login</Link>
-          <Link to="/registration"> Registration</Link>
+          <Link to="/register"> Registration</Link>
         </div>
         <Switch>
           <Route path="/" exact component={Home} />
