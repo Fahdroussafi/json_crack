@@ -10,9 +10,24 @@ function App() {
     <div className="App">
       <Router>
         <div className="navbar">
-          <Link to="/">Home Page</Link>
-          <Link to="/login"> Login</Link>
-          <Link to="/registration"> Registration</Link>
+          <div className="navbar bg-base-100">
+            <div className="flex-1">
+              <Link to="/" className="btn btn-ghost normal-case text-xl">
+                Home
+              </Link>
+            </div>
+            <div className="flex-none">
+              <ul className="menu menu-horizontal p-0">
+                <li>
+                  <Link to="/login"> Login</Link>
+                </li>
+
+                <li>
+                  <Link to="/registration"> Registration</Link>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
         <Switch>
           <Route path="/" exact component={Home} />
