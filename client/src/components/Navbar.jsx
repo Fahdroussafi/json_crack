@@ -6,12 +6,15 @@ export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
 
   return (
-    <nav className="w-full bg-white">
+    <nav className="w-full bg-base-100">
       <div className="justify-between px-4 mx-auto lg:max-w-7xl md:items-center md:flex md:px-8">
         <div>
           <div className="flex items-center justify-between py-3 md:py-5 md:block">
-            <Link to="/">
-              <img src="" width={100} height={100} />
+            <Link
+              to="/"
+              className="btn btn-ghost normal-case text-xl font-extrabold"
+            >
+              JSON_CRACK
             </Link>
             <div className="md:hidden">
               <button
@@ -57,27 +60,12 @@ export default function NavBar() {
               navbar ? "block" : "hidden"
             }`}
           >
-            <ul className="items-center justify-center space-y-8 md:flex md:space-x-6 md:space-y-0">
-              <li className="text-black text-lg hover:text-indigo-200 duration-500 font-sans">
-                <Link to="/">ACCUEIL</Link>
-              </li>
-              <li className="text-black text-lg hover:text-indigo-200 duration-500 font-sans">
-                <Link to="/About">A PROPOS</Link>
-              </li>
-              <li className="text-black text-lg hover:text-indigo-200 duration-500 font-sans">
-                <Link to="/Contact">CONTACTEZ-NOUS</Link>
-              </li>
-              <li className="text-black text-lg hover:text-indigo-200 duration-500 font-sans">
-                <Link to="/Event">EVENEMENTS</Link>
-              </li>
-            </ul>
-
             <div className="mt-3 space-y-2 lg:hidden md:hidden">
               <Link
                 to="/Login"
-                className="text-lg inline-block w-full px-4 py-2 text-center text-white bg-[#FE8F4B] rounded-md shadow hover:bg-gray-800 duration-500"
+                className="font-bold btn btn-ghost normal-case text-xl bg-red-600 text-white"
               >
-                Connecter
+                LOGIN
               </Link>
             </div>
           </div>
@@ -85,7 +73,7 @@ export default function NavBar() {
         <div className="hidden space-x-2 md:inline-block ">
           <Link
             to="/Login"
-            className="text-lg px-4 py-2 text-white bg-[#FE8F4B] rounded-md shadow hover:bg-gray-800 duration-500"
+            className="font-bold btn btn-ghost normal-case text-xl bg-red-600 text-white"
           >
             Connecter
           </Link>

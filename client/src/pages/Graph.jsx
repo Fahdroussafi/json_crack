@@ -1,5 +1,6 @@
 // import Graph from "react-json-graph";
 import React from "react";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function Home() {
   return (
@@ -8,7 +9,9 @@ function Home() {
         <div className="max-w-md">
           <h1 className="text-5xl font-bold">JSON CRACK</h1>
           <p className="py-6">Please enter the JSON data to be cracked</p>
-          <button className="btn btn-primary">Get Started</button>
+          <Link to="/login">
+            <button className="btn btn-primary">Get Started</button>
+          </Link>
         </div>
       </div>
     </div>
