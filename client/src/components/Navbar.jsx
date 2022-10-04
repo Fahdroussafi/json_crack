@@ -1,9 +1,10 @@
 import { useState } from "react";
-// import logo from "../assets/logo.png";
 import { Link } from "react-router-dom";
+import { useAuth } from "../helpers/AuthContext";
 
 export default function NavBar() {
   const [navbar, setNavbar] = useState(false);
+  const [authState, setAuthState] = useState(false);
 
   return (
     <nav className="w-full bg-base-100">
