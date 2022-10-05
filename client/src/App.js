@@ -7,13 +7,14 @@ import Dashboard from "./pages/Dashboard";
 import Register from "./pages/Register";
 import Navbar from "./components/Navbar";
 import Header from "./components/Header";
+import Background from "./assets/background.jpg";
 
 function App() {
   return (
     <div
       className="App bg-cover"
       style={{
-        backgroundImage: `url("https://img.freepik.com/free-photo/liquid-purple-art-painting-abstract-colorful-background-with-color-splash-paints-modern-art_1258-97771.jpg?w=2000")`,
+        backgroundImage: `url(${Background})`,
       }}
     >
       <Router>
