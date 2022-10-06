@@ -16,8 +16,10 @@
 <li>Login and Register</li>
 </ul><ul>
 <li>JWT Authentication</li>
-</ul><h5>Steps</h5><ul>
-<li>npm install</li>
+</ul><h5>Steps to use the project</h5><ul>
+  In the client and server directory, you can run:
+### `npm install`
 </ul><ul>
-<li>npm start</li>
-</ul>
+  In the client and server directory, you can run:
+### `npm start`
+</ul><ul>
