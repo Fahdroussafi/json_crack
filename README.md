@@ -1,25 +1,27 @@
-<h1>JSON_CRACK</h1>
-<hr><p>Automation of JSON file reading - "JSON CRACK"</p><h2>General Information</h2>
-<hr><ul>
-<li>This is a simple app that uploads a JSON file and displays the contents in a list</li>
-</ul><ul>
-<li>Easy Data Read</li>
-</ul><h2>Technologies Used</h2>
-<hr><ul>
-<li>React</li>
-</ul><ul>
-<li>NodeJS</li>
-</ul><h2>Features</h2>
-<hr><ul>
-<li>Upload JSON file</li>
-</ul><ul>
-<li>Login and Register</li>
-</ul><ul>
-<li>JWT Authentication</li>
-</ul><h5>Steps to use the project</h5><ul>
-  In the client and server directory, you can run:
+# Automation of JSON file reading - "JSON_CRACK"
+
+## General Information
+  
+- This is a simple app that uploads a JSON file and displays the contents in a list.
+    
+## Technologies Used
+
+- React
+- NodeJS
+  
+## Features
+  
+- Upload JSON file
+- Clear the JSON Data List
+- Login and Register
+- JWT Authentication
+  
+## Available Scripts
+  
+  In the client and server directory, install packages with:
+  
 ### `npm install`
-</ul><ul>
+
   In the client and server directory, you can run:
+  
 ### `npm start`
-</ul><ul>
