@@ -1,12 +1,10 @@
-import React, { useEffect } from "react";
-import { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
 function Home() {
   return (
     <>
       <div className="hero min-h-screen">
-  
         <div className="hero-content text-center">
           <div className="max-w-md">
             <h1 className="text-5xl text-white font-extrabold animate-bounce tracking-widest">

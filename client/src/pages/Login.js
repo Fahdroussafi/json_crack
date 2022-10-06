@@ -1,8 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import swal from "sweetalert";
 import { useHistory } from "react-router-dom";
+import Background from "../assets/background.jpg";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -14,10 +14,7 @@ function Login() {
     const data = { username: username, password: password };
     axios.post("http://localhost:3001/auth/login", data).then((response) => {
       if (response.data.error) {
-        // use sweet alert to show error
-        swal("Error", response.data.error[0].msg, "error");
-
-        // alert(response.data.error);
+        alert(response.data.error);
       } else {
         sessionStorage.setItem("accessToken", response.data);
         history.push("/dashboard");
@@ -28,7 +25,7 @@ function Login() {
     <main
       className="mx-auto flex min-h-screen w-full items-center justify-center bg-gray-900 text-white"
       style={{
-        backgroundImage: `url("https://img.freepik.com/free-photo/liquid-purple-art-painting-abstract-colorful-background-with-color-splash-paints-modern-art_1258-97771.jpg?w=2000")`,
+        backgroundImage: `url(${Background})`,
       }}
     >
       <section className="flex w-[30rem] flex-col space-y-10">
