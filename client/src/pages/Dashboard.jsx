@@ -16,52 +16,131 @@ const Dashboard = () => {
     // function that creates a list
     const createTree = (data) => {
       const ul = document.createElement("ul");
-      for (const key in data) {
+      for (const obj in data) {
         const li = document.createElement("li");
-        li.innerHTML = key;
-        if (typeof data[key] === "object") {
-          li.appendChild(createTree(data[key])); // if the value is an object, call the function again
+        if (Array.isArray(data[obj])) {
+          li.innerHTML = `${obj} (${data[obj].length})`;
         } else {
-          li.innerHTML += `: ${data[key]}`; // if it's not an object, append the value to the key in the list item element (li) as a string 
+          li.innerHTML = obj;
+        }
+        // li.innerHTML = obj;
+        if (typeof data[obj] === "object") {
+          li.appendChild(createTree(data[obj]));
+          console.log(obj, ":", data[obj]);
+        } else {
+          li.innerHTML += `: ${data[obj]}`; // add the value to the li
         }
         ul.appendChild(li); // append the list item to the list
-        li.style.color = typeof data[key] === "string" ? "red" : "white"; // change color if leaf node (string) or not (object)
+        li.style.color =
+          typeof data[obj] === "string"
+            ? "red"
+            : typeof data[obj] === "number"
+            ? "red"
+            : typeof data[obj] === "object"
+            ? "white"
+            : typeof data[obj] === "boolean"
+            ? "red"
+            : "red";
+
+        // li.style.color = typeof data[obj] === "string" ? "red" : "white"; // change color if leaf node (string) or not (object)
         li.style.fontWeight =
-          typeof data[key] === "string" ? "extrabold" : "bold";
+          typeof data[obj] === "string" ? "extrabold" : "bold";
+
         li.style.listStyleType =
-          typeof data[key] === "string" ? "none" : "disc";
-        li.style.marginLeft = typeof data[key] === "string" ? "0px" : "20px";
-        li.style.marginBottom = typeof data[key] === "string" ? "0px" : "10px";
-        li.style.fontSize = typeof data[key] === "string" ? "20px" : "16px";
-        li.style.fontFamily =
-          typeof data[key] === "string" ? "monospace" : "sans-serif";
-        li.style.textAlign = typeof data[key] === "string" ? "left" : "center";
-        li.style.padding = typeof data[key] === "string" ? "0px" : "5px";
-        li.style.borderRadius = typeof data[key] === "string" ? "0px" : "10px";
+          typeof data[obj] === "string"
+            ? "none"
+            : typeof data[obj] === "number"
+            ? "none"
+            : typeof data[obj] === "object"
+            ? "disc"
+            : typeof data[obj] === "boolean"
+            ? "none"
+            : "disc";
+
+        // li.style.listStyleType =
+        //   typeof data[obj] === "string" ? "none" : "disc";
+
+        li.style.marginLeft =
+          typeof data[obj] === "string"
+            ? "0px"
+            : typeof data[obj] === "number"
+            ? "0px"
+            : typeof data[obj] === "object"
+            ? "20px"
+            : typeof data[obj] === "boolean"
+            ? "0px"
+            : "0px";
+
+        li.style.marginBottom =
+          typeof data[obj] === "string"
+            ? "0px"
+            : typeof data[obj] === "number"
+            ? "0px"
+            : typeof data[obj] === "object"
+            ? "10px"
+            : typeof data[obj] === "boolean"
+            ? "0px"
+            : "0px";
+
+        // li.style.marginLeft = typeof data[obj] === "string" ? "0px" : "20px";
+        // li.style.marginBottom = typeof data[obj] === "string" ? "0px" : "10px";
+
+        li.style.fontSize = typeof data[obj] === "string" ? "20px" : "16px";
+
+        li.style.textAlign =
+          typeof data[obj] === "string"
+            ? "left"
+            : typeof data[obj] === "number"
+            ? "left"
+            : typeof data[obj] === "object"
+            ? "center"
+            : typeof data[obj] === "boolean"
+            ? "left"
+            : "center";
+        // li.style.textAlign = typeof data[obj] === "string" ? "left" : "center";
+
+        li.style.padding =
+          typeof data[obj] === "string"
+            ? "5px"
+            : typeof data[obj] === "number"
+            ? "5px"
+            : typeof data[obj] === "object"
+            ? "5px"
+            : typeof data[obj] === "boolean"
+            ? "5px"
+            : "5px";
+
+        // li.style.padding = typeof data[obj] === "string" ? "0px" : "5px";
+        li.style.borderRadius = typeof data[obj] === "string" ? "0px" : "10px";
+
         li.style.backgroundColor =
-          typeof data[key] === "string" ? "transparent" : "";
+          typeof data[obj] === "string" ? "transparent" : "";
+
         li.style.border =
-          typeof data[key] === "string" ? "none" : "2px solid #e5e5e5";
+          typeof data[obj] === "string"
+            ? "none"
+            : typeof data[obj] === "number"
+            ? "none"
+            : typeof data[obj] === "object"
+            ? "1px solid white"
+            : typeof data[obj] === "boolean"
+            ? "none"
+            : "none";
+
+        // li.style.border =
+        //   typeof data[obj] === "string" ? "none" : "2px solid #e5e5e5";
       }
       return ul;
     };
   };
-  // li.innerHTML = `<span class="caret">${key}</span>`;
-  // if (typeof data[key] === "object") {
-  //   // console.log(key);
-  //   li.appendChild(createTree(data[key]));
-  // } else {
-
-  //   // li.innerHTML = `<span>${key}: ${data[key]}</span>`;
-  //   // console.log(key, ":", data[key]);
-  // }
-
-  // ul.appendChild(li);
 
   const clearList = () => {
     const list = document.getElementById("list");
     list.innerHTML = "";
   };
+
+  // if the user tries to upload the same file again, alert them
+  
 
   return (
     <>
