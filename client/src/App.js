@@ -19,16 +19,15 @@ function App() {
     >
       <Router>
         <Route exact path="/">
-          
           <Navbar />
           <Home />
         </Route>
         <Route path="/login">
           <Login />
         </Route>
-        {/* <Route path="/registration">
+        <Route path="/register">
           <Register />
-        </Route> */}
+        </Route>
         <Route path="/dashboard">
           <Header />
           <Dashboard />

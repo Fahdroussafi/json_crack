@@ -48,26 +48,29 @@ function Login() {
             />
           </svg>
         </Link>
-        <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-purple-600">
-          <input
-            type="text"
-            placeholder="Username"
-            className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none placeholder:text-white placeholder:font-semibold"
-            onChange={(event) => {
-              setUsername(event.target.value);
-            }}
-          />
-        </div>
-        <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-purple-600 ">
-          <input
-            className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none placeholder:text-white placeholder:font-semibold"
-            placeholder="Password"
-            type="password"
-            onChange={(event) => {
-              setPassword(event.target.value);
-            }}
-          />
-        </div>
+        <form>
+          <div className="mb-7 w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-purple-600">
+            <input
+              type="text"
+              placeholder="Username"
+              className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none placeholder:text-white placeholder:font-semibold"
+              onChange={(event) => {
+                setUsername(event.target.value);
+              }}
+            />
+          </div>
+          <div className="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-purple-600 ">
+            <input
+              className="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none placeholder:text-white placeholder:font-semibold"
+              placeholder="Password"
+              autoComplete="off"
+              type="password"
+              onChange={(event) => {
+                setPassword(event.target.value);
+              }}
+            />
+          </div>
+        </form>
         <button
           className="btn btn-outline text-purple-600 font-bold hover:bg-transparent hover:text-white border-2 border-purple-600"
           onClick={login}

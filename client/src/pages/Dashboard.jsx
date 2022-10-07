@@ -20,11 +20,11 @@ const Dashboard = () => {
         const li = document.createElement("li");
         li.innerHTML = key;
         if (typeof data[key] === "object") {
-          li.appendChild(createTree(data[key]));
+          li.appendChild(createTree(data[key])); // if the value is an object, call the function again
         } else {
-          li.innerHTML += `: ${data[key]}`; // append value to key if not an object (leaf node)
+          li.innerHTML += `: ${data[key]}`; // if it's not an object, append the value to the key in the list item element (li) as a string 
         }
-        ul.appendChild(li);
+        ul.appendChild(li); // append the list item to the list
         li.style.color = typeof data[key] === "string" ? "red" : "white"; // change color if leaf node (string) or not (object)
         li.style.fontWeight =
           typeof data[key] === "string" ? "extrabold" : "bold";
